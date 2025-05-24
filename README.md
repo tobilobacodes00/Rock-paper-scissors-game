@@ -24,7 +24,7 @@ Challenge the computer, track your score, view your game history and leaderboard
 
 ## 🖥️ Demo
 
-> _To see a live demo, [click here](https://github.com/tobilobacodes00)_  
+> _To see a live demo, [click here](https://tobilobacodes00.github.io/Rock-paper-scissors-game/)_  
 > _(Or open `index.html` in your browser after cloning this repo)_
 
 ---
@@ -75,7 +75,7 @@ All sounds are free for commercial use (Pixabay License).
 
 ## 🙌 Credits
 
-- Zero UI/UX, Freecodecamp, code, and design by [tobilobacodes00](https://github.com/tobilobacodes00)
+-  Freecodecamp, code, and design by [tobilobacodes00](https://github.com/tobilobacodes00)
 - Sound effects from [Pixabay](https://pixabay.com/sound-effects/)
 
 ---
