@@ -16,6 +16,9 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 0 10px;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 main {
@@ -28,6 +31,8 @@ main {
   border: 1.5px solid rgba(120, 130, 150, 0.18);
   backdrop-filter: blur(12px);
   padding: 32px 24px 24px;
+  box-sizing: border-box;
+  transition: padding 0.3s, max-width 0.3s;
 }
 
 h1 {
@@ -307,23 +312,131 @@ h1 {
   color: #3e5a73;
 }
 
-@media (max-width: 600px) {
+/* Responsive Typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
   main {
-    padding: 18px 6px 12px;
-    max-width: 98vw;
+    padding: 12px 2vw 8px;
+    max-width: 100vw;
+    margin: 16px 0 0 0;
+    border-radius: 10px;
+  }
+  h1 {
+    font-size: 1.4rem;
+    margin: 18px 0 10px;
+  }
+  .rules-container,
+  .score-container,
+  .history-container,
+  .leaderboard-container,
+  .funfact-container,
+  .settings-container {
+    border-radius: 8px;
+    padding: 8px 6px 6px;
+    font-size: 0.98rem;
+  }
+  .btn-container {
+    flex-direction: column;
+    gap: 10px;
   }
   .btn {
-    width: 90px;
-    height: 40px;
-    font-size: 1rem;
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    font-size: 0.98rem;
+    margin: 0;
   }
   #reset-game-btn {
-    width: 120px;
-    height: 40px;
+    width: 100%;
+    height: 38px;
     font-size: 1rem;
   }
-  .score-container {
-    font-size: 1.05rem;
-    padding: 8px 8px;
+  .player-name-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
   }
+  .player-name-section input {
+    width: 100%;
+    margin-right: 0;
+  }
+  .settings-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .score-container {
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 4px;
+    font-size: 1rem;
+  }
+  .results-container {
+    min-height: 40px;
+    font-size: 1rem;
+  }
+  #results-msg, #winner-msg {
+    font-size: 1rem;
+  }
+  #theme-toggle {
+    font-size: 1.2rem;
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 13px;
+  }
+  main {
+    padding: 4px 0 4px;
+  }
+}
+
+/* Improve button and input touch targets */
+.btn,
+#reset-game-btn,
+.player-name-section input,
+.settings-container select {
+  min-height: 38px;
+  min-width: 44px;
+  font-size: 1rem;
+}
+
+/* Make leaderboard and history scrollable on small screens */
+#history-list,
+#leaderboard-list {
+  max-height: 120px;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+/* Ensure funfact and other containers wrap text */
+#funfact {
+  word-break: break-word;
+}
+
+/* Hide scrollbars for aesthetics on mobile */
+#history-list,
+#leaderboard-list {
+  scrollbar-width: thin;
+  scrollbar-color: #6e8ca0 #232a34;
+}
+#history-list::-webkit-scrollbar,
+#leaderboard-list::-webkit-scrollbar {
+  width: 6px;
+  background: #232a34;
+}
+#history-list::-webkit-scrollbar-thumb,
+#leaderboard-list::-webkit-scrollbar-thumb {
+  background: #6e8ca0;
+  border-radius: 4px;
 }
